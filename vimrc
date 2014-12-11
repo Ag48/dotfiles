@@ -18,8 +18,8 @@ set foldmethod=syntax
 set list listchars=tab:\¦\ 
 
 "set tab configuration
-set tabstop=4
-set shiftwidth=4
+set tabstop=3
+set shiftwidth=3
 set autoindent
 set smartindent
 set formatoptions-=r
@@ -48,7 +48,8 @@ NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'qtmplsel.vim'
 NeoBundle 'git://github.com/tpope/vim-repeat.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
+"NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
+NeoBundle 'https://github.com/Shougo/neosnippet'
  NeoBundle 'git://github.com/Shougo/unite.vim.git'
  NeoBundle 'git://github.com/Shougo/vimproc.git'
  NeoBundle 'git://github.com/Shougo/vimshell.git'
