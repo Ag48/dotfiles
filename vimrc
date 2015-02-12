@@ -14,7 +14,7 @@ set incsearch		" do incremental searching
 "set property
 syntax on 
 set laststatus=2
-set foldmethod=syntax
+set foldmethod=indent
 set list listchars=tab:\¦\ 
 
 "set tab configuration
