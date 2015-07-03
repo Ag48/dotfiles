@@ -28,9 +28,13 @@ set formatoptions-=o
 "set compiler
 autocmd FileType perl :compiler perl
 
-"set cursorline stronger
-set cursorline
-hi CursorLine cterm=NONE ctermbg=darkgray guibg=darkgray guifg=white
+
+"set color scheme for vimdiff
+" highlight DiffAdd    cterm=bold ctermbg=4
+" highlight DiffDelete cterm=bold ctermbg=3
+" highlight DiffChange cterm=bold ctermbg=9
+" highlight DiffText   cterm=bold ctermbg=1
+
 
 
 
@@ -44,26 +48,43 @@ NeoBundle 'git://github.com/tyru/caw.vim.git'
 nmap <C-c> <Plug>(caw:i:toggle)
 vmap <C-c> <Plug>(caw:i:toggle)
 
+NeoBundle 'vim-scripts/twilight'
+NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'qtmplsel.vim'
 NeoBundle 'git://github.com/tpope/vim-repeat.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
- NeoBundle 'git://github.com/Shougo/unite.vim.git'
- NeoBundle 'git://github.com/Shougo/vimproc.git'
- NeoBundle 'git://github.com/Shougo/vimshell.git'
- NeoBundle 'git://github.com/thinca/vim-quickrun.git'
- " NeoBundle 'git://github.com/mattn/zencoding-vim.git'
-  NeoBundle 'git://github.com/mattn/emmet-vim.git'
- " NeoBundle 'git://github.com/c9s/perlomni.vim.git'
- NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
- NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
- NeoBundle 'git://github.com/scrooloose/syntastic.git'
- NeoBundle 'git://github.com/othree/eregex.vim.git'
- "NeoBundle 'L9'
- "NeoBundle 'FuzzyFinder'
- "NeoBundle 'QuickBuf'
- NeoBundle 'git://github.com/thinca/vim-ref.git'
- "NeoBundle 'alpaca-tc/auto-pairs'
- NeoBundle 'Yggdroot/indentLine'
- NeoBundle 'scrooloose/nerdtree'
+NeoBundle 'git://github.com/Shougo/unite.vim.git'
+NeoBundle 'git://github.com/Shougo/vimproc.git'
+NeoBundle 'git://github.com/Shougo/vimshell.git'
+NeoBundle 'git://github.com/thinca/vim-quickrun.git'
+" NeoBundle 'git://github.com/mattn/zencoding-vim.git'
+NeoBundle 'git://github.com/mattn/emmet-vim.git'
+" NeoBundle 'git://github.com/c9s/perlomni.vim.git'
+" NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
+NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
+NeoBundle 'git://github.com/scrooloose/syntastic.git'
+NeoBundle 'git://github.com/othree/eregex.vim.git'
+"NeoBundle 'L9'
+"NeoBundle 'FuzzyFinder'
+"NeoBundle 'QuickBuf'
+NeoBundle 'git://github.com/thinca/vim-ref.git'
+"NeoBundle 'alpaca-tc/auto-pairs'
+NeoBundle 'Yggdroot/indentLine'
+NeoBundle 'scrooloose/nerdtree'
+
+call neobundle#end()
+
+" Required:
+filetype plugin indent on
+
+"$HOME If there are uninstalled bundles found on startup,
+" this will conveniently prompt you to install them.
+NeoBundleCheck
+"set cursorline stronger
+set cursorline
+hi CursorLine cterm=NONE ctermbg=darkgray guibg=darkgray guifg=white
+
+let g:hybrid_use_Xresources = 1
+colorscheme hybrid
