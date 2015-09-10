@@ -8,24 +8,20 @@ set backspace=indent,eol,start
 "set line number
 set number
 
-set history=50		" keep 50 lines of command line history
-set showcmd		" display incomplete commands
-set incsearch		" do incremental searching
+set history=50 " keep 50 lines of command line history
+set showcmd " display incomplete commands
+set incsearch " do incremental searching
 "set property
 syntax on 
 set laststatus=2
-set foldmethod=syntax
+set foldmethod=indent
 set list listchars=tab:\¦\ 
 
 "set tab configuration
 set expandtab
 set tabstop<
-set softtabstop=2
-set shiftwidth=3
-set autoindent
-set smartindent
-set formatoptions-=r
-set formatoptions-=o
+set softtabstop=3
+set tabstop=3
 "set compiler
 autocmd FileType perl :compiler perl
 
@@ -59,6 +55,7 @@ NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'qtmplsel.vim'
 NeoBundle 'git://github.com/tpope/vim-repeat.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
+<<<<<<< HEAD
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/Shougo/vimproc.git'
