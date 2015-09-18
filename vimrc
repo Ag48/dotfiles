@@ -18,10 +18,11 @@ set foldmethod=indent
 set list listchars=tab:\¦\ 
 
 "set tab configuration
+set autoindent
+set shiftwidth=2
 set expandtab
-set tabstop<
-set softtabstop=3
-set tabstop=3
+set softtabstop=2
+set tabstop=2
 "set compiler
 autocmd FileType perl :compiler perl
 
