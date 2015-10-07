@@ -1,3 +1,7 @@
+"   __  __ _ _____ _________
+"   \ \ | |_|     V  __/  __|
+"    \ \| | | | | | |  | [__
+" [_] \___|_|_|_|_|_|  \____|
 
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
@@ -77,6 +81,7 @@ NeoBundle 'osyo-manga/vim-watchdogs'
 NeoBundle 'jceb/vim-hier'
 NeoBundle 'vimtaku/hl_matchit.vim'
 NeoBundle 'hotchpotch/perldoc-vim'
+NeoBundle 'cocopon/iceberg.vim'
 
 
 
