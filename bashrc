@@ -27,5 +27,5 @@ ulimit -c unlimited
 HISTTIMEFORMAT='%y/%m/%d %H:%M:%S ';
 
 # set perlbrew's path
-source ~/perl5/perlbrew/etc/bashrc
+#source ~/perl5/perlbrew/etc/bashrc
 
