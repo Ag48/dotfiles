@@ -55,7 +55,6 @@ NeoBundle 'git://github.com/tpope/vim-surround.git'
 NeoBundle 'qtmplsel.vim'
 NeoBundle 'git://github.com/tpope/vim-repeat.git'
 NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-<<<<<<< HEAD
 NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
 NeoBundle 'git://github.com/Shougo/unite.vim.git'
 NeoBundle 'git://github.com/Shougo/vimproc.git'
