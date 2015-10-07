@@ -1,0 +1,43 @@
+#!/bin/bash -u
+
+#============================
+# VARIABLES
+#============================
+HOME=`dirname $0`
+
+
+#============================
+# SUB ROUTINE
+#============================
+
+usage_exit()
+{
+  echo "Usage: $0 <DATANUM>"
+  exit 1
+}
+
+print_div()
+{
+  echo "--------------------------------------------------------------------------------"
+}
+
+print_fence() 
+{
+  print_div
+  echo -e  "   $1 : $2 ($SECONDS sec)"
+  print_div
+}
+
+prep_dir()
+{
+  if [ ! -e $1 ]; then
+    echo "[$0] mkdir $1"
+    mkdir -p $1
+  fi
+}
+
+
+#============================
+# MAIN ROUTINE
+#============================
+# 0. setup
