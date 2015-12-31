@@ -50,41 +50,6 @@ source /usr/share/vim/vim74/macros/matchit.vim
 source ~/.neobundle
 
 
-NeoBundle 'vim-scripts/twilight'
-NeoBundle 'w0ng/vim-hybrid'
-NeoBundle 'git://github.com/tpope/vim-surround.git'
-NeoBundle 'qtmplsel.vim'
-NeoBundle 'git://github.com/tpope/vim-repeat.git'
-NeoBundle 'git://github.com/Shougo/neocomplcache.git'
-" NeoBundle 'git://github.com/Shougo/neocomplcache-snippets-complete.git'
-NeoBundle 'git://github.com/Shougo/neosnippet.git'
-NeoBundle 'git://github.com/Shougo/neosnippet-snippets.git'
-NeoBundle 'git://github.com/Shougo/unite.vim.git'
-NeoBundle 'git://github.com/Shougo/vimproc.git'
-NeoBundle 'git://github.com/Shougo/vimshell.git'
-NeoBundle 'thinca/vim-quickrun'
-" NeoBundle 'git://github.com/mattn/zencoding-vim.git'
-NeoBundle 'git://github.com/mattn/emmet-vim.git'
-" NeoBundle 'git://github.com/c9s/perlomni.vim.git'
-" NeoBundle 'git://github.com/altercation/vim-colors-solarized.git'
-NeoBundle 'git://github.com/Lokaltog/vim-powerline.git'
-NeoBundle 'git://github.com/scrooloose/syntastic.git'
-NeoBundle 'git://github.com/othree/eregex.vim.git'
-"NeoBundle 'L9'
-"NeoBundle 'FuzzyFinder'
-"NeoBundle 'QuickBuf'
-NeoBundle 'git://github.com/thinca/vim-ref.git'
-"NeoBundle 'alpaca-tc/auto-pairs'
-NeoBundle 'Yggdroot/indentLine'
-NeoBundle 'scrooloose/nerdtree'
-NeoBundle 'osyo-manga/shabadou.vim'
-NeoBundle 'osyo-manga/vim-watchdogs'
-NeoBundle 'jceb/vim-hier'
-NeoBundle 'vimtaku/hl_matchit.vim'
-NeoBundle 'hotchpotch/perldoc-vim'
-NeoBundle 'cocopon/iceberg.vim'
-
-
 
 call neobundle#end()
 
@@ -115,19 +80,20 @@ let b:verilog_indet_width = 3
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
- 
+
 " SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: pumvisible() ? "\<C-n>" : "\<TAB>"
+" "imap <expr><TAB>
+" " \ pumvisible() ? "\<C-n>" :
+" " \ neosnippet#expandable_or_jumpable() ?
+" " \    "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
 smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-      \ "\<Plug>(neosnippet_expand_or_jump)"
-      \: "\<TAB>"
- 
-" For snippet_complete marker.
+\ "\<Plug>(neosnippet_expand_or_jump)" : "\<TAB>"
+
+" For conceal markers.
 if has('conceal')
-    set conceallevel=2 concealcursor=i
+  set conceallevel=2 concealcursor=niv
   endif
+ 
 
 " " Disable AutoComplPop.
 " let g:acp_enableAtStartup = 0
