@@ -17,7 +17,7 @@ set showcmd " display incomplete commands
 set incsearch " do incremental searching
 "set property
 syntax on 
-set laststatus=2
+set laststatus=3
 set foldmethod=indent
 set list listchars=tab:\¦\ 
 
@@ -29,7 +29,8 @@ set softtabstop=2
 set tabstop=2
 "set compiler
 autocmd FileType perl :compiler perl
-autocmd BUfNewFile *.sh 0r $HOME/.vim/template/sh-temp
+autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh-temp
+autocmd BufNewFile,BufRead *.tex setf plaintex
 
 "set vimdiff option
 set diffopt=iwhite

@@ -8,8 +8,8 @@ fi
 # User specific aliases and functions
 alias gterm='gnome-terminal'
 alias ssh='ssh -X'
-alias lynx='ssh -X lynx -t "bash --login'
 alias rdesktop='rdesktop -g 960x1200 -x lan -d VLSILAB -u s-tomoki -a 32 scutum'
+alias cp='cp -i'
 # alias tgif='LANG=C tgif'
 
 if [ -d $HOME/works/script ]
