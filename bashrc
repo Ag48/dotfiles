@@ -19,6 +19,7 @@ fi
 
 # set default editor
 export EDITOR="/usr/bin/vim"
+export TERM=xterm-256color
 
 #CoreDumpSize set
 ulimit -c unlimited

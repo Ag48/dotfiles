@@ -12,7 +12,7 @@ HOME=`dirname $0`
 
 usage_exit()
 {
-  echo "Usage: $0 <DATANUM>"
+  echo "Usage: $0"
   exit 1
 }
 
