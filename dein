@@ -6,7 +6,8 @@ endif
 call dein#begin(expand('~/.vim/dein/repos'))
 
 call dein#add('~/.vim/dein/repos/dein.vim')
-  call dein#add('Shougo/neocomplete.vim')
+"call dein#add('Shougo/vimproc.vim', 'make')
+call dein#add('Shougo/neocomplete.vim')
 
 "set one-key comment-in & out
 call dein#add('tyru/caw.vim.git')

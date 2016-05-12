@@ -148,3 +148,4 @@ endif
 "   autocmd!
 " autocmd BufWritePre * call s:replace_tab_to_space()
 "   augroup END
+nnoremap gs :vertical wincmd f<CR>
