@@ -63,6 +63,7 @@ NeoBundle 'vim-scripts/twilight'
 NeoBundle 'vimtaku/hl_matchit.vim'
 NeoBundle 'w0ng/vim-hybrid'
 NeoBundle 'itchyny/lightline.vim'
+NeoBundle 'kannokanno/previm.git'
 
   let g:neobundle#log_filename = $HOME."/.vim/neobundle.log"
 call neobundle#end()

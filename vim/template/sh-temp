@@ -41,3 +41,6 @@ prep_dir()
 # MAIN ROUTINE
 #============================
 # 0. setup
+if [ $# -ne 0 ]; then
+  usage_exit
+fi
