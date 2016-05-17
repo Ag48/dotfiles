@@ -6,6 +6,7 @@
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+set runtimepath+=~/.vim/dein/repos/dein.vim
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -47,11 +48,12 @@ source /usr/share/vim/vim74/macros/matchit.vim
 
 
 "set neobundle
-source ~/.neobundle
+" source ~/.neobundle
+source ~/.dein
 
 "$HOME If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
-NeoBundleCheck
+" NeoBundleCheck
 
 "set cursorline stronger
 set cursorline
@@ -61,9 +63,9 @@ colorscheme desert
 
 "using watchdogs.vim
 let g:quickrun_config = {}
-call watchdogs#setup(g:quickrun_config)
+"call watchdogs#setup(g:quickrun_config)
 "" for automatic syntax checker
-let g:watchdogs_check_BufWritePost_enable = 1
+"let g:watchdogs_check_BufWritePost_enable = 1
 
 " using verilog-indent
 let b:verilog_indent_modules = 1
