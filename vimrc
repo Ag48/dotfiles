@@ -132,3 +132,5 @@ set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
+" setting to open file with vertical window
+nnoremap gs :vertical wincmd f<CR>

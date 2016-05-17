@@ -8,9 +8,11 @@ fi
 # User specific aliases and functions
 alias gterm='gnome-terminal'
 alias ssh='ssh -X'
-alias rdesktop='rdesktop -g 960x1200 -x lan -d VLSILAB -u s-tomoki -a 32 scutum'
+alias rdesktop='rdesktop -k ja -a 32'
+alias scrdt='rdesktop -g 960x1200 -x lan -d VLSILAB -u s-tomoki scutum'
+alias pegrdt='rdesktop -g 980x1100 -x lan pegasus'
 alias cp='cp -i'
-# alias tgif='LANG=C tgif'
+alias tgif='LANG=C tgif'
 
 if [ -d $HOME/works/script ]
 then
@@ -35,3 +37,4 @@ xmodmap ~/.Xmodmap
 
 PERL_MB_OPT="--install_base \"/home/s-tomoki/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/s-tomoki/perl5"; export PERL_MM_OPT;
+ulimit -c unlimited
