@@ -6,7 +6,6 @@
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-set runtimepath+=~/.vim/dein/repos/dein.vim
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -136,3 +135,6 @@ if !has('gui_running')
 endif
 " setting to open file with vertical window
 nnoremap gs :vertical wincmd f<CR>
+
+" setting for previm
+let g:previm_open_cmd = 'firefox'
