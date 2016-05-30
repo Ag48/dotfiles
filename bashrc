@@ -35,3 +35,8 @@ xmodmap ~/.Xmodmap
 
 PERL_MB_OPT="--install_base \"/home/s-tomoki/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/s-tomoki/perl5"; export PERL_MM_OPT;
+# set Macro for ldisk
+# if [ -d "/ldisk/s-tomoki" ]; then 
+#   echo "set LHOME: /ldisk/s-tomoki"
+#   export LHOME="/ldisk/s-tomoki"
+# fi
