@@ -6,7 +6,6 @@
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
-set runtimepath+=~/.vim/dein/repos/dein.vim
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -134,18 +133,8 @@ set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
-
-"   " setting for Makefile (space -> tab) 
-" function! s:replace_tab_to_space()
-"   let position = getpos('.')
-"   if &filetype !~ 'make'
-"   :%s/\t/  /ge
-"   endif
-"   call setpos('.', position)
-"   endfunction
-"
-"   augroup vimrc_rkaneko_bufwritepre
-"   autocmd!
-" autocmd BufWritePre * call s:replace_tab_to_space()
-"   augroup END
+" setting to open file with vertical window
 nnoremap gs :vertical wincmd f<CR>
+
+" setting for previm
+let g:previm_open_cmd = 'firefox'

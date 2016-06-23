@@ -1,9 +1,9 @@
 if &compatible
   set nocompatible
 endif
-" set runtimepath+='~/.vim/dein/repos/dein.vim'
+set runtimepath^=~/.vim/dein/repos/dein.vim
 
-call dein#begin(expand('~/.vim/dein/repos'))
+call dein#begin(expand('~/.vim/dein'))
 
 call dein#add('~/.vim/dein/repos/dein.vim')
 "call dein#add('Shougo/vimproc.vim', 'make')
@@ -11,10 +11,8 @@ call dein#add('Shougo/neocomplete.vim')
 
 "set one-key comment-in & out
 call dein#add('tyru/caw.vim.git')
-" nmap <Leader>c <Plug>(caw:i:toggle)
-" vmap <Leader>c <Plug>(caw:i:toggle)
-nmap <C-c> <Plug>(caw:i:toggle)
-vmap <C-c> <Plug>(caw:i:toggle)
+nmap <C-c> <Plug>(caw:hatpos:toggle)
+vmap <C-c> <Plug>(caw:hatpos:toggle)
 
 " NeoBundle 'Yggdroot/indentLine'
 " NeoBundle 'cocopon/iceberg.vim'
@@ -24,7 +22,7 @@ call dein#add('Shougo/neosnippet-snippets.git')
 call dein#add('Shougo/neosnippet.git')
 " NeoBundle 'Shougo/unite.vim.git'
 call dein#add('Shougo/vimproc.git')
-call dein#add('Shougo/vimshell.git')
+call dein#add('Shougo/vimshell', {'rev': '3787e5'})
 call dein#add('altercation/vim-colors-solarized.git')
 call dein#add('mattn/emmet-vim.git')
 call dein#add('othree/eregex.vim.git')
@@ -50,3 +48,10 @@ call dein#add('kannokanno/previm.git')
 call dein#end()
 
 filetype plugin indent on
+
+if dein#check_install(['vimproc'])
+  call dein#install(['vimproc'])
+endif 
+" if dein#check_install()
+"   call dein#install()
+" endif
