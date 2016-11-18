@@ -1,13 +1,23 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath^=~/.vim/dein/repos/dein.vim
+set runtimepath^=/vlsilab/s-tomoki/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(expand('~/.vim/dein'))
+call dein#begin(expand('/vlsilab/s-tomoki/.vim/dein'))
 
-call dein#add('~/.vim/dein/repos/dein.vim')
+
+call dein#add('Shougo/dein.vim')
 "call dein#add('Shougo/vimproc.vim', 'make')
 call dein#add('Shougo/neocomplete.vim')
+call dein#add('Shougo/vimproc.vim', {
+ \ 'build': {
+ \     'windows' : 'tools\\update-dll-mingw',
+ \     'cygwin'  : 'make -f make_cygwin.mak',
+ \     'mac'     : 'make -f make_mac.mak',
+ \     'linux'   : 'make',
+ \     'unix'    : 'gmake',
+ \    },
+ \ })
 
 "set one-key comment-in & out
 call dein#add('tyru/caw.vim.git')
@@ -39,19 +49,23 @@ call dein#add('osyo-manga/vim-watchdogs')
 call dein#add('qtmplsel.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('thinca/vim-quickrun')
-call dein#add('vim-scripts/twilight')
+"call dein#add('vim-scripts/twilight')
 call dein#add('vimtaku/hl_matchit.vim')
 call dein#add('w0ng/vim-hybrid')
 call dein#add('itchyny/lightline.vim')
 call dein#add('kannokanno/previm.git')
+call dein#add('tpope/vim-fugitive')
+call dein#add('osyo-manga/vim-anzu')
+call dein#add('majutsushi/tagbar')
 
 call dein#end()
 
 filetype plugin indent on
+let g:dein#types#git#clone_depth = 1
+if dein#check_install()
+  call dein#install()
+endif
 
-if dein#check_install(['vimproc'])
-  call dein#install(['vimproc'])
-endif 
 " if dein#check_install()
 "   call dein#install()
 " endif

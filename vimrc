@@ -31,6 +31,7 @@ set tabstop=2
 autocmd FileType perl :compiler perl
 autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh-temp
 autocmd BufNewFile,BufRead *.tex setf plaintex
+autocmd BufNewFile,BufRead *.vh setf verilog
 
 "set vimdiff option
 set diffopt=iwhite
@@ -68,7 +69,10 @@ let g:quickrun_config = {}
 
 " using verilog-indent
 let b:verilog_indent_modules = 1
-let b:verilog_indet_width = 3
+let b:verilog_indet_width = 2
+
+" set vhdl indent
+let g:vhdl_indent_genportmap = 0
 
 " Plugin key-mappings.
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
@@ -129,10 +133,44 @@ if has('conceal')
  " smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " setting for lightline.vim
+function! MyModified()
+  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+endfunction
+function! MyFugitive()
+  try
+  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head())
+  return '↱ ' . fugitive#head()
+  endif
+  catch
+  endtry
+  return ''
+endfunction
+function! MyCurrentTag()
+  return tagbar#currenttag('%s', '')
+endfunction
+let g:lightline = {
+  \ 'colorscheme': 'powerline',
+  \ 'mode_map': {'c': 'NORMAL'},
+  \ 'active': {
+    \   'left': [ ['mode', 'paste'], ['fugitive', 'filename', 'currenttag', 'anzu'] ]
+      \ },
+  \ 'component': {
+    \   'lineinfo': ' %3l:%-2v',
+    \ },
+  \ 'component_function': {
+    \   'fugitive': 'MyFugitive',
+    \   'fileformat': 'MyFileformat',
+    \   'anzu': 'anzu#search_status',
+    \   'currenttag': 'MyCurrentTag',
+    \ }
+  \ }
+
+  
 set laststatus=2
 if !has('gui_running')
   set t_Co=256
 endif
+
 " setting to open file with vertical window
 nnoremap gs :vertical wincmd f<CR>
 
