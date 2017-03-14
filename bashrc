@@ -39,3 +39,12 @@ xmodmap ~/.Xmodmap
 #PERL_MM_OPT="INSTALL_BASE=/home/s-tomoki/perl5"; export PERL_MM_OPT;
 
 ulimit -c unlimited
+
+# settings for peco
+_replace_by_history() {
+  local l=$(HISTTIMEFORMAT= history | tac | sed -e 's%^\s*[0-9]*\+[0-9\|/\| \|:]\+%%g' | peco --query "$READLINE_LINE")
+  READLINE_LINE="$l"
+  READLINE_POINT=${#l}
+}
+bind -x '"\C-r": _replace_by_history'
+bind    '"\C-xr": reverse-search-history'

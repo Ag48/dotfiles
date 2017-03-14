@@ -1,9 +1,9 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath^=/vlsilab/s-tomoki/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(expand('/vlsilab/s-tomoki/.vim/dein'))
+call dein#begin(expand("$HOME/.vim/dein"))
 
 
 call dein#add('Shougo/dein.vim')
@@ -57,6 +57,7 @@ call dein#add('kannokanno/previm.git')
 call dein#add('tpope/vim-fugitive')
 call dein#add('osyo-manga/vim-anzu')
 call dein#add('majutsushi/tagbar')
+call dein#add('lilydjwg/colorizer')
 
 call dein#end()
 
