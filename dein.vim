@@ -1,9 +1,9 @@
 if &compatible
   set nocompatible
 endif
-set runtimepath^=/vlsilab/s-tomoki/.vim/dein/repos/github.com/Shougo/dein.vim
+set runtimepath^=$HOME/.vim/dein/repos/github.com/Shougo/dein.vim
 
-call dein#begin(expand('/vlsilab/s-tomoki/.vim/dein'))
+call dein#begin(expand("$HOME/.vim/dein"))
 
 
 call dein#add('Shougo/dein.vim')
@@ -61,6 +61,7 @@ if has('nvim')
   call dein#add('Shougo/deoplete.nvim', {
         \ "autoload": {"insert": 1}})
 endif
+call dein#add('lilydjwg/colorizer')
 
 call dein#end()
 

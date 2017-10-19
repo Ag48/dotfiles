@@ -129,39 +129,39 @@ if has('conceal')
  " smap <C-k> <Plug>(neocomplcache_snippets_expand)
 
 " setting for lightline.vim
-function! MyModified()
-  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
-endfunction
-function! MyFugitive()
-  try
-  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head())
-  return '↱ ' . fugitive#head()
-  endif
-  catch
-  endtry
-  return ''
-endfunction
-function! MyCurrentTag()
-  return tagbar#currenttag('%s', '')
-endfunction
-let g:lightline = {
-  \ 'colorscheme': 'powerline',
-  \ 'mode_map': {'c': 'NORMAL'},
-  \ 'active': {
-    \   'left': [ ['mode', 'paste'], ['fugitive', 'filename', 'currenttag', 'anzu'] ]
-      \ },
-  \ 'component': {
-    \   'lineinfo': ' %3l:%-2v',
-    \ },
-  \ 'component_function': {
-    \   'fugitive': 'MyFugitive',
-    \   'fileformat': 'MyFileformat',
-    \   'anzu': 'anzu#search_status',
-    \   'currenttag': 'MyCurrentTag',
-    \ }
-  \ }
-
-  
+"function! MyModified()
+"  return &ft =~ 'help\|vimfiler\|gundo' ? '' : &modified ? '+' : &modifiable ? '' : '-'
+"endfunction
+"function! MyFugitive()
+"  try
+"  if &ft !~? 'vimfiler\|gundo' && exists('*fugitive#head') && strlen(fugitive#head())
+"  return '↱ ' . fugitive#head()
+"  endif
+"  catch
+"  endtry
+"  return ''
+"endfunction
+"function! MyCurrentTag()
+"  return tagbar#currenttag('%s', '')
+"endfunction
+"let g:lightline = {
+"  \ 'colorscheme': 'powerline',
+"  \ 'mode_map': {'c': 'NORMAL'},
+"  \ 'active': {
+"    \   'left': [ ['mode', 'paste'], ['fugitive', 'filename', 'currenttag', 'anzu'] ]
+"      \ },
+"  \ 'component': {
+"    \   'lineinfo': ' %3l:%-2v',
+"    \ },
+"  \ 'component_function': {
+"    \   'fugitive': 'MyFugitive',
+"    \   'fileformat': 'MyFileformat',
+"    \   'anzu': 'anzu#search_status',
+"    \   'currenttag': 'MyCurrentTag',
+"    \ }
+"  \ }
+"
+"  
 set laststatus=2
 if !has('gui_running')
   set t_Co=256

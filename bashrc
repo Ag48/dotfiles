@@ -70,31 +70,17 @@ fi
 export PATH=$PATH:/work/s-tomoki/local/peco_linux_amd64
 
 export HISTCONTROL="ignoredups"
-peco-history() {
-    local NUM=$(history | wc -l)
-    local FIRST=$((-1*(NUM-1)))
-
-    if [ $FIRST -eq 0 ] ; then
-        history -d $((HISTCMD-1))
-        echo "No history" >&2
-        return
-    fi  
-
-    local CMD=$(fc -l $FIRST | sort -k 2 -k 1nr | uniq -f 1 | sort -nr | sed -E 's/^[0-9]+[[:blank:]]+//' | peco | head -n 1)
-
-    if [ -n "$CMD" ] ; then
-        history -s $CMD
-
-        if type osascript > /dev/null 2>&1 ; then
-            (osascript -e 'tell application "System Events" to keystroke (ASCII character 30)' &)
-        fi  
-    else
-        history -d $((HISTCMD-1))
-    fi  
-}
-bind '\C-r":"peco-history\n"'
 
 export LESS='-i -M -R -W -g'
 
 # setting for synergy v1.7.5
 PATH="$PATH:/usr/lib64/qt4/bin:/usr/lib/qt4/bin"
+
+# settings for peco
+_replace_by_history() {
+  local l=$(HISTTIMEFORMAT= history | tac | sed -e 's%^\s*[0-9]*\+[0-9\|/\| \|:]\+%%g' | peco --query "$READLINE_LINE")
+  READLINE_LINE="$l"
+  READLINE_POINT=${#l}
+}
+bind -x '"\C-r": _replace_by_history'
+bind    '"\C-xr": reverse-search-history'
