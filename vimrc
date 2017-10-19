@@ -27,6 +27,7 @@ set shiftwidth=2
 set expandtab
 set softtabstop=2
 set tabstop=2
+filetype indent on
 "set compiler
 autocmd FileType perl :compiler perl
 autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh-temp
@@ -36,20 +37,15 @@ autocmd BufNewFile,BufRead *.vh setf verilog
 "set vimdiff option
 set diffopt=iwhite
 
-
-"set color scheme for vimdiff
-" highlight DiffAdd    cterm=bold ctermbg=4
-" highlight DiffDelete cterm=bold ctermbg=3
-" highlight DiffChange cterm=bold ctermbg=9
-" highlight DiffText   cterm=bold ctermbg=1
-
 "set matchit.vim
-source /usr/share/vim/vim74/macros/matchit.vim
+" source /usr/share/vim/vim
+" 4/macros/matchit.vim
 
 
 "set neobundle
 " source ~/.neobundle
-source ~/.dein
+source ~/.dein.vim
+source ~/.vim/config/complete.vim
 
 "$HOME If there are uninstalled bundles found on startup,
 " this will conveniently prompt you to install them.
@@ -176,3 +172,6 @@ nnoremap gs :vertical wincmd f<CR>
 
 " setting for previm
 let g:previm_open_cmd = 'firefox'
+
+" spell check setup
+set spellang=en, cjk

@@ -57,6 +57,10 @@ call dein#add('kannokanno/previm.git')
 call dein#add('tpope/vim-fugitive')
 call dein#add('osyo-manga/vim-anzu')
 call dein#add('majutsushi/tagbar')
+if has('nvim')
+  call dein#add('Shougo/deoplete.nvim', {
+        \ "autoload": {"insert": 1}})
+endif
 
 call dein#end()
 

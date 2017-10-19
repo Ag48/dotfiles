@@ -23,7 +23,7 @@ defscrollback 10000
 # # コマンド文字にJを設定しリテラルコマンドにjを設定する
 # # ディフォルトは^Aa
 # # emacs使う場合にC-aはキーが被るので変更
-escape ^Jj
+escape ^Tt
 
 #
 # # screenコマンド開始時の著作権表示などの
