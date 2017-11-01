@@ -3,7 +3,6 @@
 #============================
 # SUB ROUTINE
 #============================
-
 usage_exit()
 {
   echo "Usage: $0" >&2
@@ -18,7 +17,7 @@ print_div()
 print_fence() 
 {
   print_div
-  echo -e  "   $1 : $2 ($SECONDS sec)"
+  echo -e  "   $0 : $1 ($SECONDS sec)"
   print_div
 }
 
