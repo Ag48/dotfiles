@@ -24,10 +24,12 @@ print_fence()
 
 prep_dir()
 {
-  if [ ! -e $1 ]; then
-    echo "[$0] mkdir $1"
-    mkdir -p $1
-  fi
+  for d in $@; do
+    if [ ! -e $d ]; then
+      echo "[$0] mkdir $d"
+      mkdir -p $d
+    fi
+  done
 }
 
 #============================
