@@ -168,7 +168,7 @@ if !has('gui_running')
 endif
 
 " setting to open file with vertical window
-nnoremap gs :vertical wincmd f<CR>
+nnoremap gv :vertical wincmd f<CR>
 
 " setting for previm
 let g:previm_open_cmd = 'firefox'
