@@ -1,0 +1,12 @@
+[user]
+	email = s-tomoki@ist.osaka-u.ac.jp
+  name = Tomoki Sugiura
+[push]
+  # bool = !sh -c 'git --version | sed -e "s/.* \(-1\..\)\../ 1.8 > \1/" | bc '
+  # default = !sh -c "if [ $bool = 0 ]; then echo \"simple\"; fi" 
+[alias]
+	st = status
+	stat = status
+  co = commit
+[diff]
+  tool = vimdiff
