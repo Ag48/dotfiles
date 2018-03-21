@@ -175,3 +175,5 @@ let g:previm_open_cmd = 'firefox'
 
 " spell check setup
 set spellang=en, cjk
+
+" inoremap <silent> <unique> <Esc> <Esc>:set imsearch=0 iminsert=0<CR>

@@ -21,8 +21,6 @@ call dein#add('Shougo/vimproc.vim', {
 
 "set one-key comment-in & out
 call dein#add('tyru/caw.vim.git')
-nmap <C-c> <Plug>(caw:hatpos:toggle)
-vmap <C-c> <Plug>(caw:hatpos:toggle)
 
 " NeoBundle 'Yggdroot/indentLine'
 " NeoBundle 'cocopon/iceberg.vim'
@@ -44,9 +42,9 @@ call dein#add('tpope/vim-surround.git')
 call dein#add('hotchpotch/perldoc-vim')
 call dein#add('Shougo/neosnippet')
 call dein#add('jceb/vim-hier')
-call dein#add('osyo-manga/shabadou.vim')
-call dein#add('osyo-manga/vim-watchdogs')
-call dein#add('qtmplsel.vim')
+" call dein#add('osyo-manga/shabadou.vim')
+" call dein#add('osyo-manga/vim-watchdogs')
+" call dein#add('qtmplsel.vim')
 call dein#add('scrooloose/nerdtree')
 call dein#add('thinca/vim-quickrun')
 "call dein#add('vim-scripts/twilight')
@@ -57,6 +55,7 @@ call dein#add('kannokanno/previm.git')
 call dein#add('tpope/vim-fugitive')
 call dein#add('osyo-manga/vim-anzu')
 call dein#add('majutsushi/tagbar')
+" call dein#add('vim-scripts/taglist.vim')
 if has('nvim')
   call dein#add('Shougo/deoplete.nvim', {
         \ "autoload": {"insert": 1}})
@@ -70,6 +69,10 @@ let g:dein#types#git#clone_depth = 1
 if dein#check_install()
   call dein#install()
 endif
+
+nmap <Leader>c <Plug>(caw:hatpos:toggle)
+vmap <Leader>c <Plug>(caw:hatpos:toggle)
+
 
 " if dein#check_install()
 "   call dein#install()

@@ -22,7 +22,7 @@ then
 fi
 
 if [ -d /work/s-tomoki ]; then
-  export PATH=$PATH:/work/s-tomoki/local/neovim/bin
+  # export PATH=$PATH:/work/s-tomoki/local/neovim/bin
   export export XDG_CONFIG_HOME=~/.config
   alias vim='nvim'
 fi
@@ -68,6 +68,7 @@ if [ -d /opt/intel/mkl/ ]; then
 fi
 
 export PATH=$PATH:/work/s-tomoki/local/peco_linux_amd64
+export PATH=$PATH:/work/s-tomoki/local/bin
 
 export HISTCONTROL="ignoredups"
 
@@ -163,3 +164,14 @@ cd_func ()
     return 0
 }
 alias cd=cd_func
+
+# git prompt
+if type __git_ps1 > /dev/null 2>&1; then
+  PROMPT_COMMAND="__git_ps1 '\u@\h \W' '\\\$ '; $PROMPT_COMMAND"
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWSTATSHSTATE=true
+  GIT_PS1_SHOWUNTRACKEDFILES=true
+  GIT_PS1_SHOWUPSTREAM="auto"
+  GIT_PS1_SHOWCOLORHINTS=true
+fi
+

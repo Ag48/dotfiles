@@ -1,33 +1,39 @@
-#!/bin/bash -u
+#!/bin/bash -eu
 
 #============================
 # SUB ROUTINE
 #============================
-usage_exit()
-{
+usage_exit() {
   echo "Usage: $0" >&2
   exit 1
 }
 
-print_div()
-{
+print_div() {
   echo "--------------------------------------------------------------------------------"
 }
 
-print_fence() 
-{
+print_fence() {
   print_div
   echo -e  "   $0 : $1 ($SECONDS sec)"
   print_div
 }
 
-prep_dir()
-{
+prep_dir() {
   for d in $@; do
     if [ ! -e $d ]; then
       echo "[$0] mkdir $d"
       mkdir -p $d
     fi
+  done
+}
+
+get_opts() {
+  eval local -a opts=$1
+  while getopts s:d: OPT; do
+    case ${OPT} in 
+      "s" ) PATH_SRC="$OPTARG";;
+      "d" ) PATH_DST="$OPTARG";;
+    esac
   done
 }
 
@@ -44,3 +50,4 @@ RANDNAME=$(cat /dev/urandom | tr -dc [:alnum:] | head -c 15)
 if [ $# -ne 0 ]; then
   usage_exit
 fi
+get_opts "$@"
