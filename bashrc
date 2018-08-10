@@ -15,6 +15,7 @@ alias cp='cp -i'
 alias tgif='LANG=C tgif'
 alias vimdiff='vim -d'
 alias parallel='parallel --citation'
+alias ls='ls --color'
 
 if [ -d $HOME/works/script ]
 then
@@ -48,8 +49,6 @@ xmodmap ~/.Xmodmap
 #PERL_MM_OPT="INSTALL_BASE=/home/s-tomoki/perl5"; export PERL_MM_OPT;
 
 ulimit -c unlimited
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init -)"
 if [ -e /usr/X11R6/bin/tgif ]; then
   export PATH="${PATH}:/usr/X11R6/bin"
 fi
@@ -174,4 +173,6 @@ if type __git_ps1 > /dev/null 2>&1; then
   GIT_PS1_SHOWUPSTREAM="auto"
   GIT_PS1_SHOWCOLORHINTS=true
 fi
+
+bind '"\C-w": unix-filename-rubout'
 
