@@ -30,9 +30,6 @@ repo = 'tpope/vim-surround.git'
 repo = 'jceb/vim-hier'
 
 [[plugins]]
-repo = 'qtmplsel.vim'
-
-[[plugins]]
 repo = 'scrooloose/nerdtree'
 
 [[plugins]]

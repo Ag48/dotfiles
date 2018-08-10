@@ -78,7 +78,7 @@ noremap <C-c> <Plug>(caw:hatpos:toggle)
 tnoremap <silent> <C-n> <C-\><C-n>
 
 " set a plugin of velirog-mode in Emacs
-source  ~/.config/nvim/others/verilog_emacsauto.vim
+" source  ~/.config/nvim/others/verilog_emacsauto.vim
 
 "set compiler
 autocmd BufNewFile *.sh 0r $HOME/.vim/template/sh-temp
