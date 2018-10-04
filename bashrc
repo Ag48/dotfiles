@@ -72,6 +72,7 @@ export PATH=$PATH:/work/s-tomoki/local/bin
 export HISTCONTROL="ignoredups"
 
 export LESS='-i -M -R -W -g'
+export LESSCHARSET=utf-8
 
 # setting for synergy v1.7.5
 PATH="$PATH:/usr/lib64/qt4/bin:/usr/lib/qt4/bin"
