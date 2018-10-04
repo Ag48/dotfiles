@@ -58,7 +58,7 @@ if has('vim_starting') && dein#check_install()
 endif
 " }}}
 
-source ~/.dein.vim
+"source ~/.dein.vim
 
 " colorscheme
 set background=dark
