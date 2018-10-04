@@ -5,8 +5,13 @@
   # bool = !sh -c 'git --version | sed -e "s/.* \(-1\..\)\../ 1.8 > \1/" | bc '
   # default = !sh -c "if [ $bool = 0 ]; then echo \"simple\"; fi" 
 [alias]
-	st = status
+	st = status --short
 	stat = status
   co = commit
+  diff = diff --color
 [diff]
   tool = vimdiff
+[core]
+	pager = less -+F -+X
+[pager]
+	diff = false
