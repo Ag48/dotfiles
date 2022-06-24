@@ -9,9 +9,19 @@
 	stat = status
   co = commit
   diff = diff --color
+	mwps = push -o merge_request.create  -o merge_request.merge_when_pipeline_succeeds
+	mr = push origin -u HEAD -o merge_request.create
+	mr-am = push origin HEAD -u -o merge_request.create -o merge_request.merge_when_pipeline_succeeds -o merge_request.remove_source_branch
 [diff]
   tool = vimdiff
 [core]
 	pager = less -+F -+X
+  credential = store
+	preloadindex = true
+	fscache = true
 [pager]
 	diff = false
+[credential]
+	helper = store
+[gc]
+	auto = 256
